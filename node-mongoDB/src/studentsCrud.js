@@ -22,6 +22,8 @@ export async function connectToCluster(uri) {
  
     try {
         mongoClient = await connectToCluster(uri);
+        const db = mongoClient.db('weatherApi');
+         const collection = db.collection('data');
     } finally {
         await mongoClient.close();
     }
