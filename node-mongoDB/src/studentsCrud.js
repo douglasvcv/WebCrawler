@@ -15,6 +15,13 @@ export async function connectToCluster(uri) {
         process.exit();
     }
  }
+ async function createWeatherDocument(collection){
+    const weatherDocument = {
+        data: 'John Smith'
+    };
+ 
+    await collection.insertOne(weatherDocument);
+ }
 
  export async function executeStudentCrudOperations() {
     const uri = process.env.DB_URI;
@@ -28,4 +35,3 @@ export async function connectToCluster(uri) {
         await mongoClient.close();
     }
  }
-
